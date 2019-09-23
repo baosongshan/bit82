@@ -2,6 +2,8 @@
 #include<vld.h>  //ÄÚ´æÐ¹Â©
 #include<time.h>
 
+
+////fopen() fclose fprintf fscanf feof fputc fgetc fwrite fread
 int main()
 {
 	int ar[10];
