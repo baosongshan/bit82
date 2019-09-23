@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+int main()
+{
+	FILE *fpIn, *fpOut;
+	fpIn = fopen("Test.c", "r");
+	if (NULL == fpIn)
+	{
+		printf("Open Test.c Error.\n");
+		return -1;
+	}
+	fpOut = fopen("Myfile.txt", "w");
+	if (NULL == fpOut)
+	{
+		fclose(fpIn);
+		printf("Open Myfile.txt Error.\n");
+		return -1;
+	}
+
+	char ch;
+	while (!feof(fpIn))
+	{
+		ch = fgetc(fpIn);
+		fputc(ch, fpOut);
+	}
+
+	fclose(fpIn);
+	fclose(fpOut);
+	return 0;
+}
+
+#if 0
+int fun(int a, int b)
+{
+	return a + b;
+}
+
+//√¸¡Ó––≤Œ ˝
+//argc argument count
+//argv argument value
+//
+int main(int argc, char *argv[])
+{
+	printf("argc = %d\n", argc);
+	for (int i = 0; i < argc; ++i)
+	{
+		printf("%s\n", argv[i]);
+	}
+	return 0;
+}
+#endifˇ
